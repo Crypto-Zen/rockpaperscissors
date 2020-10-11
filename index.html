@@ -1,0 +1,84 @@
+<!-- This is my version of the rock paper scissors app-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rock-Paper-Scissors</title>
+</head>
+<body>
+
+    <script>
+        let playChoices = ["rock", "paper", "scissors"];
+        
+        //play and computer variables
+        const userSelection = "rock";
+        const computerSelection = computerPlay
+        
+
+        //Return a random choice from array playChoices
+        function computerPlay(){
+            let computerPlay = playChoices[Math.floor(Math.random() * 3)];
+            return computerPlay;
+        }
+      
+        function playRound(userSelection, computerSelection){
+            if (userSelection === computerSelection){
+                console.log("Tie Game");
+                let result = 0;
+                return result;
+            }
+            else if (userSelection === "rock" && computerSelection === "scissors"){
+                console.log("Player Wins");
+                let result = 1;
+                return result;
+            }
+            else if (userSelection === "rock" && computerSelection === "paper"){
+                console.log("CPU Win");
+                let result = -1;
+                return result;
+            }
+            else if (userSelection === "scissor" && computerSelection === "paper"){
+                console.log("Player Wins");
+                let result = 1;
+                return result;
+            }
+            else if (userSelection === "scissors" && computerSelection === "rock"){
+                console.log("CPU Win");
+                let result = -1;
+                return result;
+            }
+            else if (userSelection === "paper" && computerSelection === "rock"){
+                console.log("Player Wins");
+                let result = 1;
+                return result;
+            }
+            else if (userSelection === "paper" && computerSelection === "scissors"){
+                console.log("CPU Win");
+                let result = -1;
+                return result;
+            }
+            else{
+                console.log("Something doesn't feel right");
+            }
+        }
+        console.log(playRound(userSelection,computerSelection()));
+        console.log(userSelection,computerSelection());
+    </script>
+
+</body>
+</html>
+
+
+<!-- Psudeocode
+set variables for user and computer play
+set rock, paper, scissors to tie with themselves
+set paper losing to scissors and beating rock
+set rock to losing to paper and beating scissors
+set scissors to losing to rock and beating paper
+user inputs rock, paper, or scissors and it changes to lowercase
+computer picks one of the three randomly
+the browser compares user_selection to computer_selection and prints the winner
+-->
